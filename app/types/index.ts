@@ -34,15 +34,12 @@ export type CategoryPageProps = {
 export type RootLayoutProps = Readonly<{
     children: React.ReactNode;
 }>
-// app/types.ts (or wherever this is defined)
+
 export type ModelsPageProps = {
-  searchParams?: {
-    // Next can pass either a string or an array of strings for a query param
-    query?: string | string[];
-  };
-};
-
-
+    searchParams: Promise<{
+        [key: string]: string | string[] | undefined;
+    }>;
+}
 
 export type ModelDetailPageProps = {
     params: Promise<{
@@ -63,6 +60,9 @@ export type ModelsGridProps = {
 export type PillProps = {
     children: ReactNode
     className?: string
+    role?: string
+    "aria-label"?: string
+
 }
 
 export type NavLinkProps = {
