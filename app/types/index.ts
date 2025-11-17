@@ -34,12 +34,15 @@ export type CategoryPageProps = {
 export type RootLayoutProps = Readonly<{
     children: React.ReactNode;
 }>
-
+// app/types.ts (or wherever this is defined)
 export type ModelsPageProps = {
-    searchParams: {
-        q?: string
-    }
-}
+  searchParams?: {
+    // Next can pass either a string or an array of strings for a query param
+    query?: string | string[];
+  };
+};
+
+
 
 export type ModelDetailPageProps = {
     params: Promise<{
